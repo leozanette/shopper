@@ -1,0 +1,13 @@
+{
+  "name": "desafio_shopper_js",
+  "version": "1.0.0",
+  "description": "desafio shopper",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose up", 
+    "start-backend": "cd backend && npm install && npm run migration && npm start",
+    "start-frontend": "cd frontend && npm install && npm start"
+  },
+  "author": "leozanette",
+  "license": "ISC"
+}
