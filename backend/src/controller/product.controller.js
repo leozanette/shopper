@@ -15,7 +15,22 @@ const updateProducts = async (req, res) => {
   return res.status(200).json(body);
 }
 
+const validateProducts = async (req, res) => {
+  const { body } = req
+  const promises = [];
+
+  for (const element of body) {
+    const promise = productService.validateProducts(element.product_code, element.new_price);
+    promises.push(promise);
+  }
+
+  const validatedProducts = await Promise.all(promises);
+  console.log(validatedProducts);
+  return res.status(200).json(validatedProducts);
+}
+
 module.exports = {
   getProducts,
   updateProducts,
+  validateProducts
 }

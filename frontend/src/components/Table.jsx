@@ -1,5 +1,4 @@
 import React from 'react'
-import { regrasNegocio } from '../utils/functions'
 
 export default function Table({products}) {
   return (
@@ -20,7 +19,7 @@ export default function Table({products}) {
           <td>{product.name}</td>
           <td>{product.sales_price}</td>
           <td>{product.new_price}</td>
-          <td>{regrasNegocio(product.new_price, product.sales_price, product.cost_price)}</td>
+          <td>{product.regras}</td>
         </tr>
       ))
       }
