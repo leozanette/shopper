@@ -1,5 +1,6 @@
 body {
-  font-family: Helvetica;
+  font-family: Montserrat;
+  background-color: #E8F9F3;
 }
 
 input[type="file"] {
@@ -17,39 +18,17 @@ label {
   justify-content: center;
   margin: 10px;    
   cursor: pointer;
-}
-
-button {
-  padding: 20px 10px;
-  width: 200px;    
-  margin: 10px;    
-  border: #FFF;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-table th,
-table td {
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-table th {
-  background-color: #F2F2F2;
-}
-table td:nth-child(1),
-table td:nth-child(3),
-table td:nth-child(4) {
-  text-align: right;
-}
-table td:nth-child(2),
-table td:nth-child(5) {
-  text-align: left;
+  border-radius: 117px;
+  font-weight: 700;
 }
 
 .main-container {
   text-align: center;
-  /* display: ; */
+  width: 80%;
+  align-content: center;
+  margin-left: 10%;
+  min-height: 500px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
 }

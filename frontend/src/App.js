@@ -2,13 +2,16 @@ import { useState } from 'react';
 import './App.css'
 import Button from './components/Button';
 import Table from './components/Table';
+import Header from './components/Header';
 import FileInput from './components/FileInput';
 import Papa from 'papaparse';
+
 
 function App() {
   const [isDisable, setIsDisable] = useState(true);
   const [productCSV, setProductCSV] = useState([]);
   const [productsTable, setProductsTable] = useState([]);
+  
   const handleFileChange = async (event) => {
     Papa.parse(event.target.files[0], 
       {
@@ -42,9 +45,7 @@ function App() {
   }
 
   const checkAtualizarButton = () => {
-    console.log('apertei');
     const isValid = !productsTable.every((ele) => ele.regra === "Reajuste Válido");
-    console.log(isValid);
     setIsDisable(isValid);
   }
 
@@ -63,12 +64,15 @@ function App() {
   }
 
   return (
-    <div className='main-container'>
-    <FileInput handleFileChange={handleFileChange}/>
-    <Button text="VALIDAR" onClick={() => validateButtonClick(productCSV, setProductsTable)}/>
-    <Button text="ATUALIZAR" disabled={isDisable} onClick={ () => clickAtualizarButton()}/>
-    {productsTable.length > 0 ? <Table products={productsTable} /> : <p>Carregue o arquivo para atualização.</p>}
-    </div>
+    <>
+      <Header />
+      <FileInput handleFileChange={handleFileChange}/>
+      <div className='main-container'>
+        <Button text="VALIDAR" onClick={() => validateButtonClick(productCSV, setProductsTable)}/>
+        <Button text="ATUALIZAR" disabled={isDisable} onClick={ () => clickAtualizarButton()}/>
+        {productsTable.length > 0 ? <Table products={productsTable} /> : <p>Carregue o arquivo para atualização.</p>}
+      </div>
+    </>
   );
 }
 
