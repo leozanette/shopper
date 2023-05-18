@@ -65,7 +65,7 @@ function App() {
 
   return (
     <>
-      <Header />
+    <Header />
       <FileInput handleFileChange={handleFileChange}/>
       <div className='main-container'>
         <Button text="VALIDAR" onClick={() => validateButtonClick(productCSV, setProductsTable)}/>
