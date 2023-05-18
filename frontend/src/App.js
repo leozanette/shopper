@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './App.css'
 import Button from './components/Button';
 import Table from './components/Table';
-import Header from './components/Header';
-import FileInput from './components/FileInput';
+import FileInput from './components/FileInput.jsx';
 import Papa from 'papaparse';
+import Header from './components/Header.jsx';
 
 
 function App() {
@@ -65,7 +65,7 @@ function App() {
 
   return (
     <>
-    <Header />
+      <Header/>
       <FileInput handleFileChange={handleFileChange}/>
       <div className='main-container'>
         <Button text="VALIDAR" onClick={() => validateButtonClick(productCSV, setProductsTable)}/>

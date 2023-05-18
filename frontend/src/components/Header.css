@@ -1,5 +1,17 @@
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #2da77a;
   color: white;
-  height: 200px;
+  height: 80px;
+}
+
+h2 {
+  margin-right: 50px;
+}
+
+img {
+  margin-left: 10px;
+  max-width: 150px;
 }
